@@ -1,20 +1,45 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {HomeComponent} from './containers/home/home.component';
+import {LayoutComponent} from './containers/layout/layout.component';
+import {LoginComponent} from './containers/login/login.component';
+
+import {MapComponent} from './shared-components/map/map.component';
+import {MessageComponent} from './containers/home/container-components/message/message.component';
+import {ChatComponent} from './containers/home/container-components/chat/chat.component';
+import {ChatCreateComponent} from './containers/home/container-components/chat-create/chat-create.component';
+
+import {routes} from './app.routes';
+import {AngularFireModule, firebaseAuthConfig} from 'angularfire2';
+import {RouterModule} from '@angular/router';
+import * as firebase from 'firebase/app';
+
+import {firebaseConfig} from './app.const';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        MessageComponent,
+        ChatComponent,
+        ChatCreateComponent,
+        MapComponent,
+        HomeComponent,
+        LayoutComponent,
+        LoginComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AngularFireModule.initializeApp(firebaseConfig),
+        RouterModule.forRoot(routes)
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
