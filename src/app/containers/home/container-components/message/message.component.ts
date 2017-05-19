@@ -6,6 +6,7 @@ import {Component, OnInit, Input} from '@angular/core';
     styleUrls: ['./message.component.scss']
 })
 export class MessageComponent implements OnInit {
+    // @Input() message: IChatMessage;
     constructor() {
     }
 

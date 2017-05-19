@@ -1,3 +1,29 @@
-<p>
-  login works!
-</p>
+<form autocomplete="off" novalidate class="login-form" #loginForm="ngForm">
+    <a class="login-form__reg-link link">регистрация</a>
+
+    <img class="login-form__logo" src="" alt="">
+
+    <h2 class="login-form__title">
+        <span class="text--highlight">GEO</span>chat App
+    </h2>
+
+    <div class="login-form__subtitle">
+        from Angular-webinar
+    </div>
+
+    <div class="login-form__form-control">
+        <input type="email" class="input-control login-form__input" placeholder="email" name="email"
+               [(ngModel)]="user.email" required email>
+    </div>
+
+    <div class="login-form__form-control">
+        <input type="text" class="input-control login-form__input" placeholder="nickname" name="nickname"
+               [(ngModel)]="user.nickname" required>
+    </div>
+
+    <div class="login-form__forget-link">
+        Забыли пароль ? <a class="link">Восстановить</a>
+    </div>
+
+    <button class="btn btn__submit login-form__submit-btn" (click)="login(loginForm)">Войти</button>
+</form>

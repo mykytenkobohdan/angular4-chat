@@ -14,9 +14,11 @@ import {ChatComponent} from './containers/home/container-components/chat/chat.co
 import {ChatCreateComponent} from './containers/home/container-components/chat-create/chat-create.component';
 
 import {routes} from './app.routes';
-import {AngularFireModule, firebaseAuthConfig} from 'angularfire2';
+
+import {AuthService} from './services/auth.service';
+
+import {AngularFireModule} from 'angularfire2';
 import {RouterModule} from '@angular/router';
-import * as firebase from 'firebase/app';
 
 import {firebaseConfig} from './app.const';
 
@@ -38,7 +40,9 @@ import {firebaseConfig} from './app.const';
         AngularFireModule.initializeApp(firebaseConfig),
         RouterModule.forRoot(routes)
     ],
-    providers: [],
+    providers: [
+        AuthService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,3 +1,23 @@
-<p>
-  chat works!
-</p>
+<div class="chat">
+  <div>
+    <div class="chat__header">
+      <div class="chat__name">
+        Chat name
+      </div>
+      <div class="chat__online-status">
+        10 online
+      </div>
+    </div>
+
+    <div class="chat__chatbox">
+      <div class="chat__message">
+        <app-message></app-message>
+      </div>
+    </div>
+
+    <div class="chat__control">
+      <textarea class="chat__msg-input" placeholder="Write text"></textarea>
+      <button class="chat__send-btn">SEND</button>
+    </div>
+  </div>
+</div>
